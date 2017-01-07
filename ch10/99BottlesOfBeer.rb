@@ -86,9 +86,9 @@ num_bottles = 9999
 while num_bottles > 0
   if num_bottles > 1
     puts (english_number(num_bottles)).to_s + ' bottles of beer on the wall! Take one down, pass it around, '
-    puts (english_number(num_bottles)).to_s + ' bottles of beer!'
+    puts (english_number(num_bottles - 1)).to_s + ' bottles of beer on the wall!'
   elsif num_bottles == 1
-    puts 'one' + ' bottle of beer on the wall! Take one down, pass it around,then no there are no more :(.'
+    puts 'One' + ' bottle of beer on the wall! Take it down, pass it around, then no there are no more :(.'
   end
   num_bottles = (num_bottles-1)
 end
