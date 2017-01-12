@@ -1,7 +1,7 @@
 def log string_description, &block
   puts "Beginning '#{string_description}'..."
   returned = block.call
-  puts "..." + string_description + " finished, returning: #{returned.to_s}"
+  puts '...' + "'#{string_description}'" + " finished, returning: #{returned.to_s}"
 end
 
 log "outer block" do
