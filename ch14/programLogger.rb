@@ -1,5 +1,5 @@
 def log string_description, &block
-  puts 'Beginning...'
+  puts "Beginning '#{string_description}'..."
   returned = block.call
   puts "..." + string_description + " finished, returning: #{returned.to_s}"
 end
