@@ -5,7 +5,7 @@ def log string_description, &block
   $how_deep +=1
   returned = block.call
   $how_deep -= 1
-  puts '...' + string_description + " finished, returning: #{returned.to_s}"
+  puts '...' + "'#{string_description}'" + " finished, returning: #{returned.to_s}"
 end
 
 log "outer block" do
