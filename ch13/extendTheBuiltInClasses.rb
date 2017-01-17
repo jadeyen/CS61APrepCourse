@@ -1,31 +1,33 @@
 #Shuffle-Extended
 class Array
-  def shuffle array
-    recursive_shuffle array, []
-  end
-
-  def recursive_shuffle original_arr, shuffled_arr
-    random= rand(original_arr.length)
-    element_index = original_arr[random]
-    shuffled_arr.push element_index
-    original_arr.delete_at(random)
-    if original_arr.length > 0
-      recursive_shuffle original_arr, shuffled_arr
-    else
-      shuffled_arr
+  def shuffle 
+    array = self
+    recursive_shuffle = []
+  while array.length > 0
+    random_index = rand(array.legnth)
+    index = 0
+    alias_array = []
+    array.each do |this|
+      if index = random_index
+        recursive_shuffle.push this
+      else
+        alias_array.push this
+      end
+      index = index+1
     end
+      shuffled_arr
   end
   
 #Factorial-Extended
 class Integer
-  def factorial num
-    if num < 0
-      return 'You can\'t take the factorial of a negative number!'
+  def factorial 
+    if self < 0
+      'You can\'t take the factorial of a negative number!'
     end
-    if num <= 1
+    if self <= 1
       1
     else
-     num * factorial(num-1)
+     self * factorial(self-1)
     end
   end
   
@@ -34,44 +36,15 @@ class Integer
     puts 'Give me a number 1 to 3000'
     number = gets.chomp.to_i
 
-    def roman_numeral number
-
-      index0 = 0
-      index1= 0
-      index2= 0
-      index3 = 0
-      index4 = 0
-      index5= 0
-      index6= 0
-        if number >= 1000
-          index0= number/1000
-          number= number%1000
+    def roman_numeral 
+      numeral = ''
+      numeral = numeral + 'M'*(self/1000)
+      numeral = numeral + 'D'*(self%1000/ 500)
+      numeral = numeral + 'C'*(self%500/ 100)  
+      numeral = numeral + 'L'*(self%100/ 50)
+      numeral = numeral + 'X'*(self%50/ 10)
+      numeral = numeral + 'V'*(self%10 /5)
+      numeral = numeral + 'I'*(self%5 /1)
+      numeral
         end
-        if number >= 500
-          index1= number/500
-          number = number%500
-        end
-        if number > 100
-          index2= number/100
-          number = number%100
-        end
-        if number >= 50
-          index3= number/50
-          number = number%50
-        end
-        if number >= 10
-          index4= number/10
-          number= number%10
-        end
-        if number >= 5
-          index5= number/5
-          number = number%5
-        end
-        if number >= 1
-          index6= number/1
-          number = number%1
-        end
-          puts 'Your number in Roman Numerals is:' + 'M'*index0 + 'D'*index1 + 'C'*index2 + 'L'*index3 + 'X'*index4 + 'V'*index5 + 'I'*index6 + '.'
       end
-
-      puts roman_numeral number
