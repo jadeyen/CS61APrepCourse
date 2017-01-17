@@ -1,4 +1,5 @@
 birthdays = Hash.new
+Dir.chdir = 'C:/Desktop/CS61APrepCourse'
 filename = 'birthdays.txt'
 new_file = File.readlines filename
 new_file.each do |this|
